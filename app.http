@@ -1,0 +1,64 @@
+POST http://localhost:3000/login
+Content-Type:application/json
+
+{
+  "username": "christopher_phillips",
+  "password": "christy@123"
+}
+###
+
+// get all states from db
+GET http://localhost:3000/states/
+Authorization: bearer eyJhbGciOiJIUzI1NiJ9.Y2hyaXN0b3BoZXJfcGhpbGxpcHM.HyL7Jw1LexYynUytl37XDNLzm6AIrMsMVA2mzjwJSLY
+###
+
+//get state detials with state id
+GET http://localhost:3000/states/8/
+Authorization: bearer eyJhbGciOiJIUzI1NiJ9.Y2hyaXN0b3BoZXJfcGhpbGxpcHM.HyL7Jw1LexYynUytl37XDNLzm6AIrMsMVA2mzjwJSLY
+###
+
+//add district details to district table in db
+POST http://localhost:3000/districts/
+Authorization: bearer eyJhbGciOiJIUzI1NiJ9.Y2hyaXN0b3BoZXJfcGhpbGxpcHM.HyL7Jw1LexYynUytl37XDNLzm6AIrMsMVA2mzjwJSLY
+Content-Type: application/json
+
+{
+  "districtName": "Bagalkot",
+  "stateId": 3,
+  "cases": 2323,
+  "cured": 2000,
+  "active": 315,
+  "deaths": 8
+}
+###
+
+//get district details with district id 
+GET http://localhost:3000/districts/3/
+Authorization: bearer eyJhbGciOiJIUzI1NiJ9.Y2hyaXN0b3BoZXJfcGhpbGxpcHM.HyL7Jw1LexYynUytl37XDNLzm6AIrMsMVA2mzjwJSLY
+###
+
+//remove district from database
+DELETE http://localhost:3000/districts/322/
+Authorization: bearer eyJhbGciOiJIUzI1NiJ9.Y2hyaXN0b3BoZXJfcGhpbGxpcHM.HyL7Jw1LexYynUytl37XDNLzm6AIrMsMVA2mzjwJSLY
+###
+
+//update district details in database
+PUT http://localhost:3000/districts/1/
+Authorization: bearer eyJhbGciOiJIUzI1NiJ9.Y2hyaXN0b3BoZXJfcGhpbGxpcHM.HyL7Jw1LexYynUytl37XDNLzm6AIrMsMVA2mzjwJSLY
+Content-Type:application/json
+
+{
+  "districtName": "Nadia",
+  "stateId": 3,
+  "cases": 9628,
+  "cured": 6524,
+  "active": 3000,
+  "deaths": 104
+}
+###
+
+// get cases stats from districts
+GET http://localhost:3000/states/12/stats/
+Authorization: bearer eyJhbGciOiJIUzI1NiJ9.Y2hyaXN0b3BoZXJfcGhpbGxpcHM.HyL7Jw1LexYynUytl37XDNLzm6AIrMsMVA2mzjwJSLY
+###
+
